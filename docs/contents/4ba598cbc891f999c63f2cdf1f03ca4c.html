@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>mrk.Order</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+<script type="text/javascript" src="../assets/js/imageMapResizer.min.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>mrk.Order</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-ERDEntity"></span>
+          ERDEntity
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>Delivery System</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='141e07b689752015ca3a5a3ceef7a0cc.html'><span class='node-icon staruml-icon icon-ERDDataModel'></span>Delivery Data Base</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='4ba598cbc891f999c63f2cdf1f03ca4c.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>mrk.Order</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>English Description
+Main header of orders placed by customers (supermarkets).</p>
+
+<p>Türkçe Açıklaması (Turkish)
+Müşteriler (süpermarketler) tarafından verilen siparişlerin ana başlığı.</p>
+
+<p>توضیح فارسی (Persian)
+هدر اصلی سفارشات ثبت شده توسط مشتریان (سوپرمارکت‌ها).</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+      <section>
+        <h3>Columns</h3>
+        
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th width="20%">Name</th>
+            <th width="20%">Type</th>
+            <th width="10%">Primary Key</th>
+            <th width="10%">Foreign Key</th>
+            <th width="20%">Reference To</th>
+            <th width="10%">Nullable</th>
+            <th width="10%">Unique</th>
+          </tr>
+          
+          <tr>
+            <td><a href="ef4d1f3ef1812cde622cfe83dd50e3ba.html">ID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="1485497afbb0cebf3b8ab95aa95879a5.html">PaymentMethodID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+                <a href='b91d5a5f5330b5e6ef0d73eb67c3cc37.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>core.PaymentMethod</a> ::
+              
+              <a href='6cb39b4512ac4c3c326b27e419f79f12.html'><span class='node-icon staruml-icon icon-ERDColumn'></span>ID</a>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="b97e6670d7dc7627644eec32b5a42630.html">MarketID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+                <a href='c35c88a79783e6411f7f04e94fc8249b.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>mrk.Market</a> ::
+              
+              <a href='c9ab2854a0f2002e7121ed020e0dd6c1.html'><span class='node-icon staruml-icon icon-ERDColumn'></span>ID</a>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="c16fe4a372501f3e999ae5d84c927d19.html">StatusID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="2a5d239d12c8d340c84980b8bddf8f1b.html">PublicID</a></td>
+            <td>CHAR(36)</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="d30479c9a56cccd5643c5ec8e5f690f5.html">TotalPrice</a></td>
+            <td>DECIMAL(15,2)</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="65128922811cf5993d393109dcd7ccb7.html">IsActive</a></td>
+            <td>BIT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="8a48b622f60d003adeead54ec077893b.html">IsDelete</a></td>
+            <td>BIT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="9f407d5d41e23cf9984216a018cea2a6.html">CreatedAt</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="13366c8ac3ef4714bd88f7d0994ff40f.html">DeletedAt</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="df097e3418aad18bcb7c3bc7f9dc7264.html">CreatedBy</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="71d45c1ec2792104479509a801f80327.html">DeletedBy</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+        </table>                
+      </section>
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+      <section>
+        <h3>Related Entities</h3>
+        
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th width="25%">Entity</th>
+            <th width="25%">Cardinality</th>
+            <th width="25%">Reference Name</th>
+            <th width="25%">Relationship</th>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='c35c88a79783e6411f7f04e94fc8249b.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>mrk.Market</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='17b3b604ac873fcc0935a477d3e18a5e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Market_Order (mrk.Market—mrk.Order)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='5f869e146ea4cdf5ccc9187f3f6daa7a.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>mrk.OrderProduct</a></td>
+            <td>0..*</td>
+            <td></td>
+            <td><a href='37a92a6729119c4836ca28850ea89199.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Order_OrderProduct (mrk.Order—mrk.OrderProduct)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='959a21d3153505a96e2c00611bafe21f.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>mrk.OrderStatusLog</a></td>
+            <td>0..*</td>
+            <td></td>
+            <td><a href='5c5d59c140d5935dec1076c442583446.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Order_OrderStatusLog (mrk.Order—mrk.OrderStatusLog)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='4146730dde63d8cd26109f1cbdffc6ff.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.DeliveryTripOrder</a></td>
+            <td>0..*</td>
+            <td></td>
+            <td><a href='6b7cc1062104cb0e671c938d243992cb.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(mrk.Order—dlv.DeliveryTripOrder)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='feede623d8d176661b066f17d9c1f998.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.LoadingListOrder</a></td>
+            <td>0..*</td>
+            <td></td>
+            <td><a href='ac8a98d029f6bc4dbd90d6e039a304dd.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>LoadingListOrder_Order (mrk.Order—dlv.LoadingListOrder)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='314c1a581452707d3d134df7ea088445.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.Invoice</a></td>
+            <td>0..*</td>
+            <td></td>
+            <td><a href='6aec66d64cf3ee9c0b1c63fe9b8f7236.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(mrk.Order—dlv.Invoice)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='891f119b6002e9fb9e17ebdad75581d8.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>core.Payment</a></td>
+            <td>0..*</td>
+            <td>Order_Payment</td>
+            <td><a href='3b0fb6678eb7a28917be4bb0d7c581f7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(mrk.Order—core.Payment)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='96d8fe20aecf9607cbf034f2ca0b99fc.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>core.Status</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='20d3cce33a44134b7e03ce08bf1386c1.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Order_Status (core.Status—mrk.Order)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='b91d5a5f5330b5e6ef0d73eb67c3cc37.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>core.PaymentMethod</a></td>
+            <td>1</td>
+            <td>Payment_Method_Order</td>
+            <td><a href='ced3322e2075438e2f74334230d4c136.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(core.PaymentMethod—mrk.Order)</a></td>
+          </tr>
+          
+        </table>                
+      </section>
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>mrk.Order</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='17b3b604ac873fcc0935a477d3e18a5e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Market_Order (mrk.Market—mrk.Order)</a></li>
+        
+        <li><a href='37a92a6729119c4836ca28850ea89199.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Order_OrderProduct (mrk.Order—mrk.OrderProduct)</a></li>
+        
+        <li><a href='5c5d59c140d5935dec1076c442583446.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Order_OrderStatusLog (mrk.Order—mrk.OrderStatusLog)</a></li>
+        
+        <li><a href='6b7cc1062104cb0e671c938d243992cb.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(mrk.Order—dlv.DeliveryTripOrder)</a></li>
+        
+        <li><a href='ac8a98d029f6bc4dbd90d6e039a304dd.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>LoadingListOrder_Order (mrk.Order—dlv.LoadingListOrder)</a></li>
+        
+        <li><a href='6aec66d64cf3ee9c0b1c63fe9b8f7236.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(mrk.Order—dlv.Invoice)</a></li>
+        
+        <li><a href='3b0fb6678eb7a28917be4bb0d7c581f7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(mrk.Order—core.Payment)</a></li>
+        
+        <li><a href='20d3cce33a44134b7e03ce08bf1386c1.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Order_Status (core.Status—mrk.Order)</a></li>
+        
+        <li><a href='ced3322e2075438e2f74334230d4c136.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(core.PaymentMethod—mrk.Order)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='37a92a6729119c4836ca28850ea89199.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Order_OrderProduct (mrk.Order—mrk.OrderProduct)</a></li>
+        
+        <li><a href='5c5d59c140d5935dec1076c442583446.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Order_OrderStatusLog (mrk.Order—mrk.OrderStatusLog)</a></li>
+        
+        <li><a href='6b7cc1062104cb0e671c938d243992cb.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(mrk.Order—dlv.DeliveryTripOrder)</a></li>
+        
+        <li><a href='ac8a98d029f6bc4dbd90d6e039a304dd.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>LoadingListOrder_Order (mrk.Order—dlv.LoadingListOrder)</a></li>
+        
+        <li><a href='6aec66d64cf3ee9c0b1c63fe9b8f7236.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(mrk.Order—dlv.Invoice)</a></li>
+        
+        <li><a href='3b0fb6678eb7a28917be4bb0d7c581f7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(mrk.Order—core.Payment)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Diagrams -->
+      
+      
+      
+<section class="element-list">
+    <h3>Diagrams</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='8f4cf9b425375a9416e739bb1a96fec7.html'><span class='node-icon staruml-icon icon-ERDDiagram'></span>core</a></li>
+        
+        <li><a href='19f4efe0e2e8976a874b48798e4e1c92.html'><span class='node-icon staruml-icon icon-ERDDiagram'></span>market</a></li>
+        
+        <li><a href='d1541317c33ed6437b5d029fdd797857.html'><span class='node-icon staruml-icon icon-ERDDiagram'></span>Delivery</a></li>
+        
+    </ul>
+</section>
+
+
+      
+      
+      <!-- Image Map Resizer (https://github.com/davidjbradshaw/image-map-resizer) -->
+      <script>
+      imageMapResize();
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>dlv.LoadingList</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+<script type="text/javascript" src="../assets/js/imageMapResizer.min.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>dlv.LoadingList</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-ERDEntity"></span>
+          ERDEntity
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>Delivery System</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='141e07b689752015ca3a5a3ceef7a0cc.html'><span class='node-icon staruml-icon icon-ERDDataModel'></span>Delivery Data Base</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='9818d7bf146d1f2305dc690e8c4b4445.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.LoadingList</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>English Description
+Warehouse loading list for each trip (approved by the warehouse manager).</p>
+
+<p>Türkçe Açıklaması (Turkish)
+Her seyahat için depo yükleme listesi (depo müdürü tarafından onaylanmış).</p>
+
+<p>توضیح فارسی (Persian)
+لیست بارگیری انبار برای هر سفر (تایید شده توسط مدیر انبار).</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+      <section>
+        <h3>Columns</h3>
+        
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th width="20%">Name</th>
+            <th width="20%">Type</th>
+            <th width="10%">Primary Key</th>
+            <th width="10%">Foreign Key</th>
+            <th width="20%">Reference To</th>
+            <th width="10%">Nullable</th>
+            <th width="10%">Unique</th>
+          </tr>
+          
+          <tr>
+            <td><a href="a1c77c14aac8f3135001e0777b9f67b3.html">ID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="028011b1292fe0084006f00f3791d39c.html">DeliveryTripID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+                <a href='d37bd1706a6164806bb3d9af7581bf3d.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.DeliveryTrip</a> ::
+              
+              <a href='cadb75fe3eed70e8bbfecbfa0d886ff4.html'><span class='node-icon staruml-icon icon-ERDColumn'></span>ID</a>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="be54545f33517cf56eb4df5ccaeb67be.html">DepositoryID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+                <a href='80f0bb57bc9223c9686ff9c61045e19b.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>inv.Depository</a> ::
+              
+              <a href='4005ac23e7d3d6294c4cb0147f713ccc.html'><span class='node-icon staruml-icon icon-ERDColumn'></span>ID</a>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="363f64f90b37412489e5eaa7930441e9.html">StatusID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+                <a href='96d8fe20aecf9607cbf034f2ca0b99fc.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>core.Status</a> ::
+              
+              <a href='7d9f273e6f52046b67f205a8497a667f.html'><span class='node-icon staruml-icon icon-ERDColumn'></span>ID</a>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="68943079b16a278351cbe5b5f4200b16.html">PreparedBy</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+                <a href='a3419041acfd6238e3a4853df70827be.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>hr.Employee</a> ::
+              
+              <a href='0bb5b59fe2513933a658937c2ef6f0e3.html'><span class='node-icon staruml-icon icon-ERDColumn'></span>ID</a>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="9ec2a4b7bb29f4645bd4c199d28fd674.html">ApprovedBy</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+                <a href='a3419041acfd6238e3a4853df70827be.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>hr.Employee</a> ::
+              
+              <a href='0bb5b59fe2513933a658937c2ef6f0e3.html'><span class='node-icon staruml-icon icon-ERDColumn'></span>ID</a>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="c69cf38536a6b3d43c76e946ef820d97.html">PublicID</a></td>
+            <td>CHAR(36)</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="d82a7641246ed457c64dfd6a1d2e1f18.html">ListDate</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="83508db8a05cff7a96b8a4b97e5eba58.html">ApprovedAt</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="2c4440eea1045b8199c4497a474676a2.html">IsActive</a></td>
+            <td>BIT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="83d3174f21ed47b3f4a1a256d1608957.html">IsDelete</a></td>
+            <td>BIT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="b8ccd982f1e42804570b407921af4f25.html">CreatedAt</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="9ddaae1df0d6b31fcac068b853b7a6c3.html">DeletedAt</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="7cb60dee32f6a2b676eb51d7a00f5a12.html">CreatedBy</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="695d6e3f9ceacc5120adaa28b1f54be4.html">DeletedBy</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+        </table>                
+      </section>
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+      <section>
+        <h3>Related Entities</h3>
+        
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th width="25%">Entity</th>
+            <th width="25%">Cardinality</th>
+            <th width="25%">Reference Name</th>
+            <th width="25%">Relationship</th>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='a3419041acfd6238e3a4853df70827be.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>hr.Employee</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='1c7e1cc2450609af4031420d536d3924.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(hr.Employee—dlv.LoadingList)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='80f0bb57bc9223c9686ff9c61045e19b.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>inv.Depository</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='9d05ee55853a7730e10a79ab6c4c00f1.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>LoadingList_Depository (inv.Depository—dlv.LoadingList)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='96d8fe20aecf9607cbf034f2ca0b99fc.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>core.Status</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='a57179cc214102083a18f91af5a674bc.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>LoadingList_Status (core.Status—dlv.LoadingList)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='d37bd1706a6164806bb3d9af7581bf3d.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.DeliveryTrip</a></td>
+            <td>0..*</td>
+            <td>LoadingList_DeliveryTrip</td>
+            <td><a href='6fd931dfc0a17e15f704ba0c3d6b759e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.LoadingList—dlv.DeliveryTrip)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='feede623d8d176661b066f17d9c1f998.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.LoadingListOrder</a></td>
+            <td>0..*</td>
+            <td></td>
+            <td><a href='6d3be9e578681e171d69be59dff61e54.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.LoadingList—dlv.LoadingListOrder)</a></td>
+          </tr>
+          
+        </table>                
+      </section>
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>dlv.LoadingList</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='1c7e1cc2450609af4031420d536d3924.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(hr.Employee—dlv.LoadingList)</a></li>
+        
+        <li><a href='9d05ee55853a7730e10a79ab6c4c00f1.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>LoadingList_Depository (inv.Depository—dlv.LoadingList)</a></li>
+        
+        <li><a href='a57179cc214102083a18f91af5a674bc.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>LoadingList_Status (core.Status—dlv.LoadingList)</a></li>
+        
+        <li><a href='6fd931dfc0a17e15f704ba0c3d6b759e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.LoadingList—dlv.DeliveryTrip)</a></li>
+        
+        <li><a href='6d3be9e578681e171d69be59dff61e54.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.LoadingList—dlv.LoadingListOrder)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='6fd931dfc0a17e15f704ba0c3d6b759e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.LoadingList—dlv.DeliveryTrip)</a></li>
+        
+        <li><a href='6d3be9e578681e171d69be59dff61e54.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.LoadingList—dlv.LoadingListOrder)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Diagrams -->
+      
+      
+      
+<section class="element-list">
+    <h3>Diagrams</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='d1541317c33ed6437b5d029fdd797857.html'><span class='node-icon staruml-icon icon-ERDDiagram'></span>Delivery</a></li>
+        
+    </ul>
+</section>
+
+
+      
+      
+      <!-- Image Map Resizer (https://github.com/davidjbradshaw/image-map-resizer) -->
+      <script>
+      imageMapResize();
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>dlv.DeliveryTrip</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+<script type="text/javascript" src="../assets/js/imageMapResizer.min.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>dlv.DeliveryTrip</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-ERDEntity"></span>
+          ERDEntity
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>Delivery System</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='141e07b689752015ca3a5a3ceef7a0cc.html'><span class='node-icon staruml-icon icon-ERDDataModel'></span>Delivery Data Base</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='d37bd1706a6164806bb3d9af7581bf3d.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.DeliveryTrip</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>English Description
+Defines each delivery trip (assigning driver, vehicle, and source warehouse).</p>
+
+<p>Türkçe Açıklaması (Turkish)
+Her dağıtım seyahatini tanımlar (şoför, araç ve kaynak depo ataması).</p>
+
+<p>توضیح فارسی (Persian)
+تعریف هر سفر توزیع (تخصیص راننده، خودرو و انبار مبدأ).</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+      <section>
+        <h3>Columns</h3>
+        
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th width="20%">Name</th>
+            <th width="20%">Type</th>
+            <th width="10%">Primary Key</th>
+            <th width="10%">Foreign Key</th>
+            <th width="20%">Reference To</th>
+            <th width="10%">Nullable</th>
+            <th width="10%">Unique</th>
+          </tr>
+          
+          <tr>
+            <td><a href="cadb75fe3eed70e8bbfecbfa0d886ff4.html">ID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="96956943528ceb8cf5d8529b678ae9d9.html">DriverID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+                <a href='a9dc991bba37a21a21024e4042d91f87.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.Driver</a> ::
+              
+              <a href='b2b66302282374c59f76198c60e72d6b.html'><span class='node-icon staruml-icon icon-ERDColumn'></span>ID</a>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="e45ac9d4274fcc393185aae3d490afb2.html">VehicleID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+                <a href='77904ba930fe132fb4d041daa843ac3b.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.Vehicle</a> ::
+              
+              <a href='0a03528a4f8519a97a5fbfcab0a04ac9.html'><span class='node-icon staruml-icon icon-ERDColumn'></span>ID</a>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="da8a689f809581f5eec89404e139f120.html">StatusID</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+                <a href='96d8fe20aecf9607cbf034f2ca0b99fc.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>core.Status</a> ::
+              
+              <a href='7d9f273e6f52046b67f205a8497a667f.html'><span class='node-icon staruml-icon icon-ERDColumn'></span>ID</a>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="1dd4a331e23d60a6bdb64303726ef810.html">PublicID</a></td>
+            <td>CHAR(36)</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="c133c7d7c7088fea6970a8323ef8cac8.html">TripDate</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="31e6c8c4c6c5ed445bada97a46caec56.html">StartTime</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="440a508dd22216c2adbfa95cce5245d5.html">EndTime</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="5064e30de0c990e5026802b436751042.html">TotalWeight</a></td>
+            <td>DECIMAL(10,2)</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="f9e400b7e82db95aedc895fc93b4f56f.html">Description</a></td>
+            <td>VARCHAR(200)</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="bbe180f4791fb46926626a1b26307feb.html">IsActive</a></td>
+            <td>BIT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="16e7037586e496d35286b99751cd7104.html">IsDelete</a></td>
+            <td>BIT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="f4078e72af6fada9c04e0d085ff50415.html">CreatedAt</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="17c04daf955d63211c809c39005282e5.html">DeletedAt</a></td>
+            <td>DATETIME</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="e82cdfbdaac9d78195ee402d29c0332c.html">CreatedBy</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="8f3f428c66718a5c4510d43e6f6ab06b.html">DeletedBy</a></td>
+            <td>BIGINT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+        </table>                
+      </section>
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+      <section>
+        <h3>Related Entities</h3>
+        
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th width="25%">Entity</th>
+            <th width="25%">Cardinality</th>
+            <th width="25%">Reference Name</th>
+            <th width="25%">Relationship</th>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='96d8fe20aecf9607cbf034f2ca0b99fc.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>core.Status</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='0299e6be6d673d3c5778a518898200be.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>DeliveryTrip_Status (core.Status—dlv.DeliveryTrip)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='77904ba930fe132fb4d041daa843ac3b.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.Vehicle</a></td>
+            <td>1</td>
+            <td>DeliveryTrip_Vehicle</td>
+            <td><a href='76e51a4d0d615bcb4b511583609c7615.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.Vehicle—dlv.DeliveryTrip)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='a9dc991bba37a21a21024e4042d91f87.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.Driver</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='ed7c465ad855d4fd9af8e23bdf265ef5.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>DeliveryTrip_Driver (dlv.Driver—dlv.DeliveryTrip)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='314c1a581452707d3d134df7ea088445.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.Invoice</a></td>
+            <td>0..*</td>
+            <td>DeliveryTrip_invoice</td>
+            <td><a href='62473ee9ee1b5f67ee97d8fe0890bf89.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.DeliveryTrip—dlv.Invoice)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='4146730dde63d8cd26109f1cbdffc6ff.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.DeliveryTripOrder</a></td>
+            <td>0..*</td>
+            <td></td>
+            <td><a href='c6abf9eee503c75d09fe59911bf828c7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>DeliveryTrip_DeliveryTripOrder (dlv.DeliveryTrip—dlv.DeliveryTripOrder)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='9818d7bf146d1f2305dc690e8c4b4445.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>dlv.LoadingList</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='6fd931dfc0a17e15f704ba0c3d6b759e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.LoadingList—dlv.DeliveryTrip)</a></td>
+          </tr>
+          
+        </table>                
+      </section>
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>dlv.DeliveryTrip</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='0299e6be6d673d3c5778a518898200be.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>DeliveryTrip_Status (core.Status—dlv.DeliveryTrip)</a></li>
+        
+        <li><a href='76e51a4d0d615bcb4b511583609c7615.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.Vehicle—dlv.DeliveryTrip)</a></li>
+        
+        <li><a href='ed7c465ad855d4fd9af8e23bdf265ef5.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>DeliveryTrip_Driver (dlv.Driver—dlv.DeliveryTrip)</a></li>
+        
+        <li><a href='62473ee9ee1b5f67ee97d8fe0890bf89.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.DeliveryTrip—dlv.Invoice)</a></li>
+        
+        <li><a href='c6abf9eee503c75d09fe59911bf828c7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>DeliveryTrip_DeliveryTripOrder (dlv.DeliveryTrip—dlv.DeliveryTripOrder)</a></li>
+        
+        <li><a href='6fd931dfc0a17e15f704ba0c3d6b759e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.LoadingList—dlv.DeliveryTrip)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='62473ee9ee1b5f67ee97d8fe0890bf89.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(dlv.DeliveryTrip—dlv.Invoice)</a></li>
+        
+        <li><a href='c6abf9eee503c75d09fe59911bf828c7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>DeliveryTrip_DeliveryTripOrder (dlv.DeliveryTrip—dlv.DeliveryTripOrder)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Diagrams -->
+      
+      
+      
+<section class="element-list">
+    <h3>Diagrams</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='d1541317c33ed6437b5d029fdd797857.html'><span class='node-icon staruml-icon icon-ERDDiagram'></span>Delivery</a></li>
+        
+    </ul>
+</section>
+
+
+      
+      
+      <!-- Image Map Resizer (https://github.com/davidjbradshaw/image-map-resizer) -->
+      <script>
+      imageMapResize();
+      </script>
+    </div>
+  </body>
+</html>

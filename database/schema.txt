@@ -1,0 +1,732 @@
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS `hr.Employee`;
+DROP TABLE IF EXISTS `core.Users`;
+DROP TABLE IF EXISTS `hr.Customer`;
+DROP TABLE IF EXISTS `BaseEntity`;
+DROP TABLE IF EXISTS `inv.Product`;
+DROP TABLE IF EXISTS `core.Role`;
+DROP TABLE IF EXISTS `core.UserRole`;
+DROP TABLE IF EXISTS `core.LocationType`;
+DROP TABLE IF EXISTS `core.Location`;
+DROP TABLE IF EXISTS `OTP`;
+DROP TABLE IF EXISTS `inv.Tag`;
+DROP TABLE IF EXISTS `inv.ProductType`;
+DROP TABLE IF EXISTS `inv.ProductTypeTag`;
+DROP TABLE IF EXISTS `inv.ProductTag`;
+DROP TABLE IF EXISTS `inv.Producer`;
+DROP TABLE IF EXISTS `inv.ProducerProductType`;
+DROP TABLE IF EXISTS `inv.Depository`;
+DROP TABLE IF EXISTS `inv.DepositoryProduct`;
+DROP TABLE IF EXISTS `mrk.Market`;
+DROP TABLE IF EXISTS `mrk.Order`;
+DROP TABLE IF EXISTS `mrk.OrderProduct`;
+DROP TABLE IF EXISTS `core.CatStatus`;
+DROP TABLE IF EXISTS `core.Status`;
+DROP TABLE IF EXISTS `core.StatusType`;
+DROP TABLE IF EXISTS `mrk.OrderStatusLog`;
+DROP TABLE IF EXISTS `core.PaymentMethod`;
+DROP TABLE IF EXISTS `core.Payment`;
+DROP TABLE IF EXISTS `dlv.Vehicle`;
+DROP TABLE IF EXISTS `dlv.VehicleStatusLog`;
+DROP TABLE IF EXISTS `dlv.Driver`;
+DROP TABLE IF EXISTS `dlv.DeliveryTrip`;
+DROP TABLE IF EXISTS `dlv.DeliveryTripOrder`;
+DROP TABLE IF EXISTS `dlv.DeliverProof`;
+DROP TABLE IF EXISTS `dlv.LoadingList`;
+DROP TABLE IF EXISTS `dlv.LoadingListOrder`;
+DROP TABLE IF EXISTS `dlv.LoadingListOrderProduct`;
+DROP TABLE IF EXISTS `core.Notification`;
+DROP TABLE IF EXISTS `dlv.Invoice`;
+SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE `hr.Employee` (
+    `ID` BIGINT NOT NULL,
+    `UserID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `ProfilePhoto` CHAR(512),
+    `Address` VARCHAR(200) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `core.Users` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `Family` VARCHAR(50) NOT NULL,
+    `PhoneNumber` CHAR(11) NOT NULL,
+    `IDCard` CHAR(11) NOT NULL,
+    `Password` CHAR(60) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `hr.Customer` (
+    `ID` BIGINT NOT NULL,
+    `UserID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `ProfilePhoto` CHAR(512),
+    `Address` VARCHAR(200) NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `CreatedBy` BIGINT NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `DeletedAt` DATETIME,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `BaseEntity` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `inv.Product` (
+    `ID` BIGINT NOT NULL,
+    `ProducerID` BIGINT NOT NULL,
+    `ProductTypeID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(100) NOT NULL,
+    `HasExpiration` BIT NOT NULL,
+    `ExpirationDate` DATETIME,
+    `ProductionDate` DATETIME NOT NULL,
+    `PricePerUnit` DECIMAL(15,2) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`)
+);
+
+CREATE TABLE `core.Role` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `core.UserRole` (
+    `ID` BIGINT NOT NULL,
+    `UserID` BIGINT NOT NULL,
+    `RoleID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `core.LocationType` (
+    `ID` BIGINT NOT NULL,
+    `PID` BIGINT,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `CreatedBy` BIGINT NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `DeletedAt` DATETIME,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `core.Location` (
+    `ID` BIGINT NOT NULL,
+    `PID` BIGINT,
+    `LocationTypeID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `CreatedBy` BIGINT NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `DeletedAt` DATETIME,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `OTP` (
+    `ID` BIGINT NOT NULL,
+    `UserID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Code` CHAR(6) NOT NULL,
+    `ValidUntil` DATETIME NOT NULL,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`, `Code`)
+);
+
+CREATE TABLE `inv.Tag` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`)
+);
+
+CREATE TABLE `inv.ProductType` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `inv.ProductTypeTag` (
+    `ID` BIGINT NOT NULL,
+    `ProductTypeID` BIGINT NOT NULL,
+    `TagID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `inv.ProductTag` (
+    `ID` BIGINT NOT NULL,
+    `TagID` BIGINT NOT NULL,
+    `ProductTypeID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `inv.Producer` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(100) NOT NULL,
+    `Logo` VARCHAR(512) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `inv.ProducerProductType` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `ProducerID` BIGINT NOT NULL,
+    `ProductTypeID` BIGINT NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `inv.Depository` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(100) NOT NULL,
+    `Address` VARCHAR(250) NOT NULL,
+    `ProvinceID` BIGINT NOT NULL,
+    `CityID` BIGINT NOT NULL,
+    `PostalCode` VARCHAR(10) NOT NULL,
+    `Latitude` DECIMAL(10,7) NOT NULL,
+    `Longitude` DECIMAL(10,7) NOT NULL,
+    `TotalCapacity` DECIMAL(15,2) NOT NULL,
+    `CurrentCapacity` DECIMAL(15,2) NOT NULL,
+    `AvailableSpace` DECIMAL(15,2) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `inv.DepositoryProduct` (
+    `ID` BIGINT NOT NULL,
+    `ProductID` BIGINT NOT NULL,
+    `DepositoryID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Quantity` INTEGER NOT NULL,
+    `ReservedQuantity` INTEGER NOT NULL,
+    `AvailableQuantity` INTEGER NOT NULL,
+    `LastRestockDate` DATETIME NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `mrk.Market` (
+    `ID` BIGINT NOT NULL,
+    `Owner` BIGINT NOT NULL,
+    `ProvinceID` BIGINT NOT NULL,
+    `CityID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(100) NOT NULL,
+    `Address` VARCHAR(250) NOT NULL,
+    `Plaque` VARCHAR(30) NOT NULL,
+    `PostalCode` VARCHAR(10) NOT NULL,
+    `BranchNumber` SMALLINT NOT NULL,
+    `BranchCode` VARCHAR(10) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `mrk.Order` (
+    `ID` BIGINT NOT NULL,
+    `PaymentMethodID` BIGINT NOT NULL,
+    `MarketID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `TotalPrice` DECIMAL(15,2) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `mrk.OrderProduct` (
+    `ID` BIGINT NOT NULL,
+    `ProductID` BIGINT NOT NULL,
+    `OrderID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Quantity` INTEGER NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `core.CatStatus` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `Description` VARCHAR(100) NOT NULL,
+    `Code` INTEGER NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `core.Status` (
+    `ID` BIGINT NOT NULL,
+    `StatusTypeID` BIGINT NOT NULL,
+    `CatStatusID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `Description` VARCHAR(100) NOT NULL,
+    `Code` INTEGER NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `core.StatusType` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `Description` VARCHAR(100) NOT NULL,
+    `Code` INTEGER NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `mrk.OrderStatusLog` (
+    `ID` BIGINT NOT NULL,
+    `OrderID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `core.PaymentMethod` (
+    `ID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `Description` VARCHAR(100) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `core.Payment` (
+    `ID` BIGINT NOT NULL,
+    `OrderID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PaymentMethodID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `TotalPrice` DECIMAL(15,2) NOT NULL,
+    `BankRefNumber` VARCHAR(100),
+    `InternalRefNumber` VARCHAR(100),
+    `Description` VARCHAR(100) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `dlv.Vehicle` (
+    `ID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `PlateNumber` VARCHAR(30) NOT NULL,
+    `VehicleType` INTEGER NOT NULL,
+    `CapacityKg` DECIMAL(10,2) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `dlv.VehicleStatusLog` (
+    `ID` BIGINT NOT NULL,
+    `VehicleID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Description` VARCHAR(100) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `dlv.Driver` (
+    `ID` BIGINT NOT NULL,
+    `EmployeeID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `LicenseNumber` VARCHAR(50) NOT NULL,
+    `LicenseExpiryDate` DATETIME NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `dlv.DeliveryTrip` (
+    `ID` BIGINT NOT NULL,
+    `DriverID` BIGINT NOT NULL,
+    `VehicleID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `TripDate` DATETIME NOT NULL,
+    `StartTime` DATETIME NOT NULL,
+    `EndTime` DATETIME,
+    `TotalWeight` DECIMAL(10,2) NOT NULL,
+    `Description` VARCHAR(200) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `dlv.DeliveryTripOrder` (
+    `ID` BIGINT NOT NULL,
+    `TripID` BIGINT NOT NULL,
+    `OrderID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Sequence` INTEGER NOT NULL,
+    `PlannedArrival` DATETIME NOT NULL,
+    `ActualArrival` DATETIME,
+    `Description` VARCHAR(200) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `dlv.DeliverProof` (
+    `ID` BIGINT NOT NULL,
+    `DeliveryTripOrderID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `ReceivedByName` VARCHAR(50) NOT NULL,
+    `ReceivedByIDCard` CHAR(11) NOT NULL,
+    `ReceivedByPhone` CHAR(11) NOT NULL,
+    `Signature` VARCHAR(512) NOT NULL,
+    `Recip` VARCHAR(512) NOT NULL,
+    `DeliveredAt` DATETIME NOT NULL,
+    `Description` VARCHAR(150) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `dlv.LoadingList` (
+    `ID` BIGINT NOT NULL,
+    `DeliveryTripID` BIGINT NOT NULL,
+    `DepositoryID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PreparedBy` BIGINT NOT NULL,
+    `ApprovedBy` BIGINT,
+    `PublicID` CHAR(36) NOT NULL,
+    `ListDate` DATETIME NOT NULL,
+    `ApprovedAt` DATETIME,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `dlv.LoadingListOrder` (
+    `ID` BIGINT NOT NULL,
+    `LoadingListID` BIGINT NOT NULL,
+    `OrderID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `dlv.LoadingListOrderProduct` (
+    `ID` BIGINT NOT NULL,
+    `LoadingListOrderID` BIGINT NOT NULL,
+    `DeliveryTripOrderID` BIGINT NOT NULL,
+    `OrderProductID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `PlannedQuantity` INTEGER NOT NULL,
+    `LoadedQuantity` INTEGER NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `core.Notification` (
+    `ID` BIGINT NOT NULL,
+    `UserID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `Title` VARCHAR(100) NOT NULL,
+    `Message` VARCHAR(500) NOT NULL,
+    `ReadAt` DATETIME,
+    `IsRead` BIT NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+CREATE TABLE `dlv.Invoice` (
+    `ID` BIGINT NOT NULL,
+    `OrderID` BIGINT NOT NULL,
+    `DeliveryTripID` BIGINT NOT NULL,
+    `StatusID` BIGINT NOT NULL,
+    `PublicID` CHAR(36) NOT NULL,
+    `InvoiceNumber` INTEGER NOT NULL,
+    `InvoiceDate` DATETIME NOT NULL,
+    `IsActive` BIT NOT NULL,
+    `IsDelete` BIT NOT NULL,
+    `CreatedAt` DATETIME NOT NULL,
+    `DeletedAt` DATETIME,
+    `CreatedBy` BIGINT NOT NULL,
+    `DeletedBy` BIGINT,
+    PRIMARY KEY (`ID`),
+    UNIQUE (`ID`)
+);
+
+ALTER TABLE `hr.Employee` ADD FOREIGN KEY (`UserID`) REFERENCES `core.Users`(`ID`);
+ALTER TABLE `hr.Customer` ADD FOREIGN KEY (`UserID`) REFERENCES `core.Users`(`ID`);
+ALTER TABLE `inv.Product` ADD FOREIGN KEY (`ProductTypeID`) REFERENCES `inv.ProductType`(`ID`);
+ALTER TABLE `inv.Product` ADD FOREIGN KEY (`ProducerID`) REFERENCES `inv.Producer`(`ID`);
+ALTER TABLE `core.UserRole` ADD FOREIGN KEY (`UserID`) REFERENCES `core.Users`(`ID`);
+ALTER TABLE `core.UserRole` ADD FOREIGN KEY (`RoleID`) REFERENCES `core.Role`(`ID`);
+ALTER TABLE `core.Location` ADD FOREIGN KEY (`PID`) REFERENCES `core.Location`(`ID`);
+ALTER TABLE `core.Location` ADD FOREIGN KEY (`LocationTypeID`) REFERENCES `core.LocationType`(`ID`);
+ALTER TABLE `OTP` ADD FOREIGN KEY (`UserID`) REFERENCES `core.Users`(`ID`);
+ALTER TABLE `inv.ProductTypeTag` ADD FOREIGN KEY (`ProductTypeID`) REFERENCES `inv.ProductType`(`ID`);
+ALTER TABLE `inv.ProductTypeTag` ADD FOREIGN KEY (`TagID`) REFERENCES `inv.Tag`(`ID`);
+ALTER TABLE `inv.ProducerProductType` ADD FOREIGN KEY (`ProductTypeID`) REFERENCES `inv.ProductType`(`ID`);
+ALTER TABLE `inv.ProducerProductType` ADD FOREIGN KEY (`ProducerID`) REFERENCES `inv.Producer`(`ID`);
+ALTER TABLE `inv.DepositoryProduct` ADD FOREIGN KEY (`ProductID`) REFERENCES `inv.Product`(`ID`);
+ALTER TABLE `inv.DepositoryProduct` ADD FOREIGN KEY (`DepositoryID`) REFERENCES `inv.Depository`(`ID`);
+ALTER TABLE `mrk.Market` ADD FOREIGN KEY (`Owner`) REFERENCES `hr.Customer`(`ID`);
+ALTER TABLE `mrk.Market` ADD FOREIGN KEY (`CityID`) REFERENCES `core.Location`(`ID`);
+ALTER TABLE `mrk.Order` ADD FOREIGN KEY (`MarketID`) REFERENCES `mrk.Market`(`ID`);
+ALTER TABLE `mrk.Order` ADD FOREIGN KEY (`PaymentMethodID`) REFERENCES `core.PaymentMethod`(`ID`);
+ALTER TABLE `mrk.OrderProduct` ADD FOREIGN KEY (`StatusID`) REFERENCES `core.Status`(`ID`);
+ALTER TABLE `mrk.OrderProduct` ADD FOREIGN KEY (`ProductID`) REFERENCES `inv.Product`(`ID`);
+ALTER TABLE `mrk.OrderProduct` ADD FOREIGN KEY (`OrderID`) REFERENCES `mrk.Order`(`ID`);
+ALTER TABLE `core.Status` ADD FOREIGN KEY (`CatStatusID`) REFERENCES `core.CatStatus`(`ID`);
+ALTER TABLE `core.Status` ADD FOREIGN KEY (`StatusTypeID`) REFERENCES `core.StatusType`(`ID`);
+ALTER TABLE `mrk.OrderStatusLog` ADD FOREIGN KEY (`OrderID`) REFERENCES `mrk.Order`(`ID`);
+ALTER TABLE `mrk.OrderStatusLog` ADD FOREIGN KEY (`StatusID`) REFERENCES `core.Status`(`ID`);
+ALTER TABLE `core.Payment` ADD FOREIGN KEY (`OrderID`) REFERENCES `mrk.Order`(`ID`);
+ALTER TABLE `core.Payment` ADD FOREIGN KEY (`StatusID`) REFERENCES `core.Status`(`ID`);
+ALTER TABLE `core.Payment` ADD FOREIGN KEY (`PaymentMethodID`) REFERENCES `core.PaymentMethod`(`ID`);
+ALTER TABLE `dlv.VehicleStatusLog` ADD FOREIGN KEY (`StatusID`) REFERENCES `core.Status`(`ID`);
+ALTER TABLE `dlv.VehicleStatusLog` ADD FOREIGN KEY (`VehicleID`) REFERENCES `dlv.Vehicle`(`ID`);
+ALTER TABLE `dlv.Driver` ADD FOREIGN KEY (`EmployeeID`) REFERENCES `hr.Employee`(`ID`);
+ALTER TABLE `dlv.DeliveryTrip` ADD FOREIGN KEY (`StatusID`) REFERENCES `core.Status`(`ID`);
+ALTER TABLE `dlv.DeliveryTrip` ADD FOREIGN KEY (`VehicleID`) REFERENCES `dlv.Vehicle`(`ID`);
+ALTER TABLE `dlv.DeliveryTrip` ADD FOREIGN KEY (`DriverID`) REFERENCES `dlv.Driver`(`ID`);
+ALTER TABLE `dlv.DeliveryTripOrder` ADD FOREIGN KEY (`StatusID`) REFERENCES `core.Status`(`ID`);
+ALTER TABLE `dlv.DeliveryTripOrder` ADD FOREIGN KEY (`TripID`) REFERENCES `dlv.DeliveryTrip`(`ID`);
+ALTER TABLE `dlv.DeliverProof` ADD FOREIGN KEY (`DeliveryTripOrderID`) REFERENCES `dlv.DeliveryTripOrder`(`ID`);
+ALTER TABLE `dlv.LoadingList` ADD FOREIGN KEY (`PreparedBy`) REFERENCES `hr.Employee`(`ID`);
+ALTER TABLE `dlv.LoadingList` ADD FOREIGN KEY (`DepositoryID`) REFERENCES `inv.Depository`(`ID`);
+ALTER TABLE `dlv.LoadingList` ADD FOREIGN KEY (`StatusID`) REFERENCES `core.Status`(`ID`);
+ALTER TABLE `dlv.LoadingList` ADD FOREIGN KEY (`DeliveryTripID`) REFERENCES `dlv.DeliveryTrip`(`ID`);
+ALTER TABLE `dlv.LoadingList` ADD FOREIGN KEY (`ApprovedBy`) REFERENCES `hr.Employee`(`ID`);
+ALTER TABLE `dlv.LoadingListOrder` ADD FOREIGN KEY (`OrderID`) REFERENCES `mrk.Order`(`ID`);
+ALTER TABLE `dlv.LoadingListOrder` ADD FOREIGN KEY (`LoadingListID`) REFERENCES `dlv.LoadingList`(`ID`);
+ALTER TABLE `dlv.LoadingListOrderProduct` ADD FOREIGN KEY (`OrderProductID`) REFERENCES `mrk.OrderProduct`(`ID`);
+ALTER TABLE `dlv.LoadingListOrderProduct` ADD FOREIGN KEY (`StatusID`) REFERENCES `core.Status`(`ID`);
+ALTER TABLE `dlv.LoadingListOrderProduct` ADD FOREIGN KEY (`DeliveryTripOrderID`) REFERENCES `dlv.DeliveryTripOrder`(`ID`);
+ALTER TABLE `dlv.LoadingListOrderProduct` ADD FOREIGN KEY (`LoadingListOrderID`) REFERENCES `dlv.LoadingListOrder`(`ID`);
+ALTER TABLE `core.Notification` ADD FOREIGN KEY (`UserID`) REFERENCES `core.Users`(`ID`);
+ALTER TABLE `dlv.Invoice` ADD FOREIGN KEY (`OrderID`) REFERENCES `mrk.Order`(`ID`);
+ALTER TABLE `dlv.Invoice` ADD FOREIGN KEY (`StatusID`) REFERENCES `core.Status`(`ID`);
+ALTER TABLE `dlv.Invoice` ADD FOREIGN KEY (`DeliveryTripID`) REFERENCES `dlv.DeliveryTrip`(`ID`);
