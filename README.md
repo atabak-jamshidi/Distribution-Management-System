@@ -22,10 +22,7 @@ This project is a comprehensive Fleet &amp; Micro-Distribution Management System
 ├── database/
 │   └── schema.sql              # Full DDL (38 tables, 5 schemas)
 ├── docs/
-│   ├── TABLE_DESCRIPTIONS.md   # Trilingual table documentation (FA / EN / TR)
-│   ├── erd/                    # Entity-Relationship diagrams
-│   ├── bpmn/                   # BPMN 2.0 process models
-│   └── user-stories/           # Agile user stories + acceptance criteria
+│   ├── document.html           #a html file to view and analyse the whole project and Trilingual table                                         documentation (FA / EN / TR)
 └── README.md
 ```
 
