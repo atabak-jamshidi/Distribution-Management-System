@@ -22,7 +22,7 @@ This project is a comprehensive Fleet &amp; Micro-Distribution Management System
 ├── database/
 │   └── schema.sql              # Full DDL (38 tables, 5 schemas)
 ├── docs/
-│   ├── document.html           #a html file to view and analyse the whole project and Trilingual table                                         documentation (FA / EN / TR)
+│   ├── document.html           #a html file to view and analyse the whole project and Trilingual table documentation (FA / EN / TR)
 └── README.md
 ```
 
